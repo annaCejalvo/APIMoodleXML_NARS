@@ -4,14 +4,19 @@ import java.io.*;
 import org.jdom.*;
 import org.jdom.output.*;
 
-public class ShortAnswer {
+public class ShortAnswer extends Question{
 
 	static Element racine = new Element("question");
+	
+	static org.jdom.Document document = new Document(racine);
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Element answer = new Element("answer");
+		racine.addContent(answer);
+		
 
 	}
 
