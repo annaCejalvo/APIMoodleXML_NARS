@@ -4,20 +4,23 @@ import java.io.*;
 import org.jdom.*;
 import org.jdom.output.*;
 
-public class ShortAnswer /*extends Question*/{
+public class ShortAnswer extends Question{
 
-	static Element racine = new Element("question");
+	static Element question = new Element("question");
 	
-	static org.jdom.Document document = new Document(racine);
+	static org.jdom.Document document = new Document(question);
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		Attribute questionA = new Attribute("type", "shortanswer");
+		question.setAttribute(questionA);
 		
 		Element answer = new Element("answer");
-		racine.addContent(answer);
+		Attribute answerA = new Attribute ("fraction", "100");
+		answer.setAttribute(answerA);
+		question.addContent(answer);
 		
 		Element text = new Element("text");
 		text.setText("The correct answer");
@@ -25,30 +28,10 @@ public class ShortAnswer /*extends Question*/{
 		Element feedback = new Element("feedback");
 		answer.addContent(feedback);
 		Element textFeedBack = new Element("text");
-		textFeedBack.setText("Correct");
+		textFeedBack.setText("Correct!");
 		feedback.addContent(textFeedBack);
 		
-		affiche();
-		enregistre("ShortAnswer.xml");
-	}
-
-	static void affiche(){
-		try{
-		//On utilise ici un affichage classique avec getPrettyFormat()
-		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
-		sortie.output(document, System.out);
-		}
-		catch (java.io.IOException e){}
-	}
-
-	static void enregistre(String fichier){
-		try{
-		//On utilise ici un affichage classique avec getPrettyFormat()
-		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
-		//Remarquez qu'il suffit simplement de créer une instance de FileOutputStream
-		//avec en argument le nom du fichier pour effectuer la sérialisation.
-		sortie.output(document, new FileOutputStream(fichier));
-		}
-		catch (java.io.IOException e){}
+		affiche(document);
+		enregistre(document, "ShortAnswer.xml");
 	}
 }

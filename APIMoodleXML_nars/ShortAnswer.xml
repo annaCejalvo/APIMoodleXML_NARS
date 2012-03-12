@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<question>
-  <answer>
+<question type="shortanswer">
+  <answer fraction="100">
     <text>The correct answer</text>
     <feedback>
-      <text>Correct</text>
+      <text>Correct!</text>
     </feedback>
   </answer>
 </question>
