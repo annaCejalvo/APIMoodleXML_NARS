@@ -1,37 +1,33 @@
 package dcll.nars.apimoodlexml_nars;
 
-import java.io.*;
 import org.jdom.*;
-import org.jdom.output.*;
 
 public class ShortAnswer extends Question{
+	private String answer;
+	
+	public ShortAnswer(String intitule, String type, String answer) {
+		super(intitule, type);
+		// TODO Auto-generated constructor stub
+		this.answer = answer;
+	}
+	
+	public void addContents(){
+		addAnwser();
+		
+		/* A mettre dans la classe Answer */
+		Element answerElement = new Element("answer");
+		Attribute answerAttribute = new Attribute ("fraction", "100");
+		answerElement.setAttribute(answerAttribute);
+		question.addContent(answerElement);
 
-	static Element question = new Element("question");
-	
-	static org.jdom.Document document = new Document(question);
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		Attribute questionA = new Attribute("type", "shortanswer");
-		question.setAttribute(questionA);
-		
-		Element answer = new Element("answer");
-		Attribute answerA = new Attribute ("fraction", "100");
-		answer.setAttribute(answerA);
-		question.addContent(answer);
-		
 		Element text = new Element("text");
-		text.setText("The correct answer");
-		answer.addContent(text);
+		text.setText(answer);
+		answerElement.addContent(text);
 		Element feedback = new Element("feedback");
-		answer.addContent(feedback);
+		answerElement.addContent(feedback);
 		Element textFeedBack = new Element("text");
 		textFeedBack.setText("Correct!");
 		feedback.addContent(textFeedBack);
-		
-		affiche(document);
-		enregistre(document, "ShortAnswer.xml");
+		/* fin Answer */
 	}
 }
