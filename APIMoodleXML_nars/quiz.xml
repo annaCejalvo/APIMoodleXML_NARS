@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="truefalse">
+    <nom>
+      <text>Q 1</text>
+    </nom>
+    <questiontext format="html">
+      <text>C vrai?</text>
+    </questiontext>
+    <reponse fraction="100.0">
+      <text>true</text>
+      <feedback>
+        <text>correct!</text>
+      </feedback>
+    </reponse>
+  </question>
+</quiz>
+

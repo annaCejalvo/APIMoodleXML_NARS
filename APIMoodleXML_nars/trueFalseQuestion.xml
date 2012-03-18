@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question type="truefalse">
+  <nom>
+    <text>Q 1</text>
+  </nom>
+  <questiontext format="html">
+    <text>C'est juste?</text>
+  </questiontext>
+  <reponse fraction="100">
+    <text>true</text>
+    <feedback>
+      <text>Correct!</text>
+    </feedback>
+  </reponse>
+  <reponse fraction="0">
+    <text>false</text>
+    <feedback>
+      <text>Ooops!</text>
+    </feedback>
+  </reponse>
+</question>
+
