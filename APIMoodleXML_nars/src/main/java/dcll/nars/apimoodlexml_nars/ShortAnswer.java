@@ -5,14 +5,14 @@ import org.jdom.*;
 public class ShortAnswer extends Question{
 	private String answer;
 	
-	public ShortAnswer(String intitule, String type, String answer) {
-		super(intitule, type);
+	public ShortAnswer(String nom, String texte, String type, String answer) {
+		super(nom, texte, type);
 		// TODO Auto-generated constructor stub
 		this.answer = answer;
 	}
 	
 	public void addContents(){
-		addAnwser();
+		//Question.addAnwser();
 		
 		/* A mettre dans la classe Answer */
 		Element answerElement = new Element("answer");

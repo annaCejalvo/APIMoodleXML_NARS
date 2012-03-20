@@ -14,10 +14,9 @@ public class Question {
 	public String typeQ;
 	// Nous allons commencer notre arborescence en cr�ant la racine XML
 	// qui sera ici "question"
-	public static Element question;
+	public static Element question= new Element("question");
 
 	public Question(String nomQ, String textQ, String type) {
-		question = new Element("question");	
 		answers = new ArrayList<Reponse>();
 		this.nomQ = nomQ;
 		this.textQ = textQ;
