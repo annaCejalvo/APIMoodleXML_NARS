@@ -11,11 +11,11 @@ public class Reponse {
 	//private Question question; 
 	private String textR;
 	private String feedBackR;
-	private float fractionR;
+	private int fractionR;
 	
 	Element reponse = new Element("reponse");
 
-	public Reponse(String txtReponse, String feedB, float frac) {
+	public Reponse(String txtReponse, String feedB, int frac) {
 
 		this.textR = txtReponse;
 		this.feedBackR = feedB;
