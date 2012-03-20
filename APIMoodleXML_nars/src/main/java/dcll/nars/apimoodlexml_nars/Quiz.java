@@ -37,6 +37,8 @@ public class Quiz {
 //		doc2.setRootElement(new Element("question"));
 //		r.getReponse().getParent().getRootElement().setContent(content);	
 		
+		//test commit de ma branche
+		
 		//tfQ.addAnwser(new Reponse(tfQ, "false", "Ooops!", 0));
 
 		quiz.addContent(tfQ.getQuestionElement());
