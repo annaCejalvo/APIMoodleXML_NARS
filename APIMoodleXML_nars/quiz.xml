@@ -7,13 +7,13 @@
     <questiontext format="html">
       <text>C vrai?</text>
     </questiontext>
-    <reponse fraction="100.0">
+    <reponse fraction="100">
       <text>true</text>
       <feedback>
         <text>correct!</text>
       </feedback>
     </reponse>
-    <reponse fraction="0.0">
+    <reponse fraction="0">
       <text>false</text>
       <feedback>
         <text>Ooops!</text>
@@ -27,7 +27,7 @@
     <questiontext format="html">
       <text>question short</text>
     </questiontext>
-    <reponse fraction="100.0">
+    <reponse fraction="100">
       <text>The correct answer</text>
       <feedback>
         <text>correct!</text>
@@ -41,7 +41,7 @@
     <questiontext format="html">
       <text>question numerical</text>
     </questiontext>
-    <reponse fraction="100.0">
+    <reponse fraction="100">
       <text>23</text>
       <feedback>
         <text>Feedback</text>
