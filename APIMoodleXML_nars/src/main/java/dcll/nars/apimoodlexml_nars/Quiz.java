@@ -1,6 +1,7 @@
 package dcll.nars.apimoodlexml_nars;
 
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jdom.Document;
@@ -20,11 +21,14 @@ public class Quiz {
 	public static void main(String[] args) {
 		
 		TrueFalseQuestion tfQ = new TrueFalseQuestion("Q 1", "C vrai?", "truefalse");
-		tfQ.addAnwser(new Reponse(tfQ, "true", "correct!", 100));
+		tfQ.addAnswer(new Reponse("true", "correct!", 100));
+		tfQ.addAnswer(new Reponse("false", "Ooops!", 0));
 		
-		//tfQ.addAnwser(new Reponse(tfQ, "false", "Ooops!", 0));
-		
+		ShortAnswer q2  = new ShortAnswer("Q 2", "question short", "shortanswer");
+		q2.addAnswer(new Reponse("The correct answer", "correct!", 100));
+				
 		quiz.addContent(tfQ.getQuestionElement());
+		quiz.addContent(q2.getQuestionElement());
 		
 		affiche(document);
 		enregistre(document, "quiz.xml");

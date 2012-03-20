@@ -13,6 +13,26 @@
         <text>correct!</text>
       </feedback>
     </reponse>
+    <reponse fraction="0.0">
+      <text>false</text>
+      <feedback>
+        <text>Ooops!</text>
+      </feedback>
+    </reponse>
+  </question>
+  <question type="shortanswer">
+    <nom>
+      <text>Q 2</text>
+    </nom>
+    <questiontext format="html">
+      <text>question short</text>
+    </questiontext>
+    <reponse fraction="100.0">
+      <text>The correct answer</text>
+      <feedback>
+        <text>correct!</text>
+      </feedback>
+    </reponse>
   </question>
 </quiz>
 

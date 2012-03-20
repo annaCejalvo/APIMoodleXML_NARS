@@ -4,15 +4,15 @@ import org.jdom.Attribute;
 import org.jdom.Element;
 
 public class Reponse {
-	private Question question; 
+	//private Question question; 
 	private String textR;
 	private String feedBackR;
 	private float fractionR;
 	
-	static Element reponse = new Element("reponse");
+	Element reponse = new Element("reponse");
 
-	public Reponse(Question quest, String txtReponse, String feedB, float frac) {
-		this.question = quest;
+	public Reponse(/*Question quest, */String txtReponse, String feedB, float frac) {
+		//this.question = quest;
 		this.textR = txtReponse;
 		this.feedBackR = feedB;
 		this.fractionR = frac;
@@ -27,7 +27,10 @@ public class Reponse {
 		textFeedback.setText(feedBackR);
 		feedback.addContent(textFeedback);
 		reponse.addContent(feedback);
-		Question.getQuestionElement().addContent(reponse);
+		//Question.getQuestionElement().addContent(reponse);
 	}
 
+	public Element getReponseElement() {
+		return reponse;
+	}
 }
