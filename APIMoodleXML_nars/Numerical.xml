@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question type="Numerical ">
+  <answer fraction="100">
+    <text>23</text>
+    <feedback>
+      <text>Feedback</text>
+    </feedback>
+  </answer>
+</question>
+
