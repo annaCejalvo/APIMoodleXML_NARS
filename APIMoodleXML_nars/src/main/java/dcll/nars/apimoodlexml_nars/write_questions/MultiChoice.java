@@ -1,4 +1,4 @@
-package dcll.nars.apimoodlexml_nars;
+package dcll.nars.apimoodlexml_nars.write_questions;
 
 import org.jdom.Attribute;
 import org.jdom.Document;
