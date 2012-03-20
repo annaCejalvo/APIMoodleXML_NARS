@@ -1,4 +1,4 @@
-=package dcll.nars.apimoodlexml_nars;
+package dcll.nars.apimoodlexml_nars;
 
 import org.jdom.*;
 
