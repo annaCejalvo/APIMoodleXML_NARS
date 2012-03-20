@@ -1,8 +1,10 @@
 package dcll.nars.apimoodlexml_nars;
 
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.jdom.Content;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.output.Format;
@@ -18,19 +20,29 @@ public class Quiz {
 	static org.jdom.Document document = new Document(quiz);
 
 	public static void main(String[] args) {
+
+
+		WriteTrueFalseQuestion tfQ = new WriteTrueFalseQuestion("Q 1", "C vrai?", "truefalse");
+		tfQ.addAnswer(new Reponse("true", "correct!", 100));
+		tfQ.addAnswer(new Reponse("false", "Ooops!", 0));
+
+		ShortAnswer q2  = new ShortAnswer("Q 2", "question short", "shortanswer");
+		q2.addAnswer(new Reponse("The correct answer", "correct!", 100));
 		
-		TrueFalseQuestion tfQ = new TrueFalseQuestion("Q 1", "C vrai?", "truefalse");
-		tfQ.addAnwser(new Reponse(tfQ, "true", "correct!", 100));
-		
-		//tfQ.addAnwser(new Reponse(tfQ, "false", "Ooops!", 0));
-		
+		Numerical num =new Numerical("Q 3", "question numerical","Numerical");
+		num.addAnswer(new Reponse("23", "Feedback", 100));
+				
+
 		quiz.addContent(tfQ.getQuestionElement());
+
+		quiz.addContent(q2.getQuestionElement());
+		quiz.addContent(num.getQuestionElement());
 		
 		affiche(document);
 		enregistre(document, "quiz.xml");
 	}
 
-	/*Ces deux methodes servent a ecrire le quiz.xml*/
+	/* Ces deux methodes servent a ecrire le quiz.xml */
 	static void affiche(org.jdom.Document document) {
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()

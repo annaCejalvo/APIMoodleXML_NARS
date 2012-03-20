@@ -9,6 +9,7 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
 public class Numerical extends Question  {
+<<<<<<< HEAD
 	
 	
 	static Element question = new Element("question");
@@ -93,5 +94,14 @@ public class Numerical extends Question  {
 		
 		
 	
+=======
+
+	public Numerical(String nomQ, String textQ, String type) {
+		super(nomQ, textQ, type);
+		// TODO Auto-generated constructor stub
+	}
+	
+     
+>>>>>>> b4ddc9c49a36789b96fe10642893dc2970bde42b
 
 }

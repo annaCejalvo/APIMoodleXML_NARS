@@ -1,22 +1,26 @@
 package dcll.nars.apimoodlexml_nars;
 
+import java.util.List;
+
 import org.jdom.Attribute;
+import org.jdom.Content;
+import org.jdom.Document;
 import org.jdom.Element;
 
 public class Reponse {
-	private Question question; 
+	//private Question question; 
 	private String textR;
 	private String feedBackR;
-	private float fractionR;
+	private int fractionR;
 	
-	static Element reponse = new Element("reponse");
+	Element reponse = new Element("reponse");
 
-	public Reponse(Question quest, String txtReponse, String feedB, float frac) {
-		this.question = quest;
+	public Reponse(String txtReponse, String feedB, int frac) {
+
 		this.textR = txtReponse;
 		this.feedBackR = feedB;
-		this.fractionR = frac;
-
+		this.fractionR = frac;	
+		
 		Attribute fraction = new Attribute("fraction", ""+fractionR);
 		reponse.setAttribute(fraction);
 		Element text = new Element("text");
@@ -27,7 +31,10 @@ public class Reponse {
 		textFeedback.setText(feedBackR);
 		feedback.addContent(textFeedback);
 		reponse.addContent(feedback);
-		Question.getQuestionElement().addContent(reponse);
+
 	}
 
+	public Element getReponseElement() {
+		return reponse;
+	}
 }
