@@ -7,4 +7,5 @@ public class Numerical extends Question  {
 			super(nomQ, textQ, type);
 			// TODO Auto-generated constructor stub
 		}
+
 }

@@ -28,15 +28,11 @@ public class Quiz {
 
 		ShortAnswer q2  = new ShortAnswer("Q 2", "question short", "shortanswer");
 		q2.addAnswer(new Reponse("The correct answer", "correct!", 100));
-		
-		Numerical num =new Numerical("Q 3", "question numerical","Numerical");
-		num.addAnswer(new Reponse("23", "Feedback", 100));
 				
 
 		quiz.addContent(tfQ.getQuestionElement());
 
 		quiz.addContent(q2.getQuestionElement());
-		quiz.addContent(num.getQuestionElement());
 		
 		affiche(document);
 		enregistre(document, "quiz.xml");
