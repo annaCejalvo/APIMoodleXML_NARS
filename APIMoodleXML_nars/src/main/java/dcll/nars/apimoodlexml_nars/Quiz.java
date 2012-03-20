@@ -1,6 +1,7 @@
 package dcll.nars.apimoodlexml_nars;
 
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jdom.Content;
@@ -20,27 +21,19 @@ public class Quiz {
 
 	public static void main(String[] args) {
 
-		WriteTrueFalseQuestion tfQ = new WriteTrueFalseQuestion("Q 1",
-				"C vrai?", "truefalse");
-		Reponse r = new Reponse(tfQ, "true", "correct!", 100);
-		tfQ.addAnwser(r);
-		
-//		
-//		List content = r.getReponse().getParent().cloneContent();
-//		// detach: --> same exception with or without this
-//		for (int i = 0; i <content.size(); i++) {
-//			Content next = (Content) content.get(i);
-//			next.detach();
-//		}
-//		// create 2nd document with root element
-//		Document doc2 = new Document();
-//		doc2.setRootElement(new Element("question"));
-//		r.getReponse().getParent().getRootElement().setContent(content);	
-		
-		//tfQ.addAnwser(new Reponse(tfQ, "false", "Ooops!", 0));
+
+		WriteTrueFalseQuestion tfQ = new WriteTrueFalseQuestion("Q 1", "C vrai?", "truefalse");
+		tfQ.addAnswer(new Reponse("true", "correct!", 100));
+		tfQ.addAnswer(new Reponse("false", "Ooops!", 0));
+
+		ShortAnswer q2  = new ShortAnswer("Q 2", "question short", "shortanswer");
+		q2.addAnswer(new Reponse("The correct answer", "correct!", 100));
+				
 
 		quiz.addContent(tfQ.getQuestionElement());
 
+		quiz.addContent(q2.getQuestionElement());
+		
 		affiche(document);
 		enregistre(document, "quiz.xml");
 	}
