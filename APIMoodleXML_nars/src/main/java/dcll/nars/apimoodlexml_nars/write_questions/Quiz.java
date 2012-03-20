@@ -1,10 +1,7 @@
 package dcll.nars.apimoodlexml_nars.write_questions;
 
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.List;
-
-import org.jdom.Content;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.output.Format;
@@ -22,7 +19,7 @@ public class Quiz {
 	public static void main(String[] args) {
 
 
-		WriteTrueFalseQuestion tfQ = new WriteTrueFalseQuestion("Q 1", "C vrai?", "truefalse");
+		TrueFalseQuestion tfQ = new TrueFalseQuestion("Q 1", "C vrai?", "truefalse");
 		tfQ.addAnswer(new Reponse("true", "correct!", 100));
 		tfQ.addAnswer(new Reponse("false", "Ooops!", 0));
 
@@ -34,7 +31,6 @@ public class Quiz {
 				
 
 		quiz.addContent(tfQ.getQuestionElement());
-
 		quiz.addContent(q2.getQuestionElement());
 		quiz.addContent(num.getQuestionElement());
 		
