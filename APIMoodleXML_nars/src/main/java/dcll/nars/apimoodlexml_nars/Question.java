@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jdom.Attribute;
+import org.jdom.Content;
+import org.jdom.Document;
 import org.jdom.Element;
 
 public class Question {
@@ -38,6 +40,7 @@ public class Question {
 		text.setText(textQ);
 		questiontext.addContent(text);
 		question.addContent(questiontext);
+		
 	}
 
 	public void addAnwser(Reponse e) {
