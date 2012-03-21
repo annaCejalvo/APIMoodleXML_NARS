@@ -59,5 +59,4 @@ public class Question {
 	public Element getQuestionElement() {
 		return question;
 	}
-
 }
