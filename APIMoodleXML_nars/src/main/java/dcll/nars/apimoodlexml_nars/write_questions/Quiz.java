@@ -6,13 +6,16 @@ import java.util.List;
 import org.jdom.Element;
 
 public class Quiz {
-	private Element quiz;
+	private static Element quiz = new Element("quiz");
 	private List<Question> questions;
 	
 	public Quiz(){
-		quiz = new Element("quiz");
 		questions = new ArrayList<Question>();
 	}
+	public Quiz(Element elem) {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public void setQuestions(List<Question> questions) {
 		this.questions = questions;
 	}
@@ -27,6 +30,9 @@ public class Quiz {
 	}
 	
 	public Element getQuizElement() {
+		return quiz;
+	}
+	public static Element getQuiz() {
 		return quiz;
 	}
 }

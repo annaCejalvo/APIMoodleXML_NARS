@@ -38,9 +38,9 @@ public class MultiChoice extends Question{
 		
 		//tfQ.addAnwser(new Reponse(tfQ, "false", "Ooops!", 0));
 		//doc.addContent(quiz);
-		Quiz.quiz.addContent(tfQ.getQuestionElement());
+		//Quiz.quiz.addContent(tfQ.getQuestionElement());
 		//quiz.addContent(tfQ.getQuestionElement());
-		Quiz.affiche(Quiz.document);
+		//Quiz.affiche(Quiz.document);
 	}
 
 }
