@@ -19,14 +19,14 @@ public class Quiz {
 	public static void main(String[] args) {
 
 
-		TrueFalseQuestion tfQ = new TrueFalseQuestion("Q 1", "C vrai?", "truefalse");
+		TrueFalseQuestion tfQ = new TrueFalseQuestion("Q 1", "C vrai?");
 		tfQ.addAnswer(new Reponse("true", "correct!", 100));
 		tfQ.addAnswer(new Reponse("false", "Ooops!", 0));
 
-		ShortAnswer q2  = new ShortAnswer("Q 2", "question short", "shortanswer");
+		ShortAnswer q2  = new ShortAnswer("Q 2", "question short");
 		q2.addAnswer(new Reponse("The correct answer", "correct!", 100));
 		
-		Numerical num =new Numerical("Q 3", "question numerical","Numerical");
+		Numerical num =new Numerical("Q 3", "question numerical");
 		num.addAnswer(new Reponse("23", "Feedback", 100));
 				
 
@@ -68,5 +68,4 @@ public class Quiz {
 	public List<Question> getQuestions() {
 		return questions;
 	}
-
 }

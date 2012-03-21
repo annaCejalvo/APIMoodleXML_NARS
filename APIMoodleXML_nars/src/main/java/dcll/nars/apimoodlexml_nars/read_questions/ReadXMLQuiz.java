@@ -18,6 +18,8 @@ public class ReadXMLQuiz {
 			// Le parsing est termin� ;)
 			document = sxb.build(new File("quiz.xml"));
 		} catch (Exception e) {
+			System.err.println(" pb de parsing : " + e ) ; 
+
 		}
 
 		// On initialise un nouvel �l�ment racine avec l'�l�ment racine du

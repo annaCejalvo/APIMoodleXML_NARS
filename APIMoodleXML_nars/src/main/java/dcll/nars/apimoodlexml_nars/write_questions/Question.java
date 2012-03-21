@@ -15,15 +15,11 @@ public class Question {
 	// qui sera ici "question"
 	public Element question;
 
-	public Question(String nomQ, String textQ, String type) {
+	public Question(String nomQ, String textQ) {
 		question = new Element("question");	
 		answers = new ArrayList<Reponse>();
 		this.nomQ = nomQ;
 		this.textQ = textQ;
-		this.typeQ = type;
-		
-		Attribute questionAttribute = new Attribute("type", this.typeQ);
-		question.setAttribute(questionAttribute);
 
 		Element nom = new Element("nom");
 		Element textNomQ = new Element("text");

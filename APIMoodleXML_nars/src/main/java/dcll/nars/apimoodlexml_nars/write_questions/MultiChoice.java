@@ -5,20 +5,21 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 public class MultiChoice extends Question{
-
-	private static final String typeQ = "multichoice";
 	private boolean single;
 	private boolean shuffleanswers;
 	private String answernumbering;
 	
-	public MultiChoice(String nomQ, String textQ, String type, boolean single, boolean shuffleanswers, String answernumbering) {
-		super(nomQ, textQ, type);
+	public MultiChoice(String nomQ, String textQ, boolean single, boolean shuffleanswers, String answernumbering) {
+		super(nomQ, textQ);
+		this.typeQ = "multichoice";
 		this.single = single;
 		this.shuffleanswers = shuffleanswers;
 		
 		//checked the form of String
 		this.answernumbering = answernumbering;
 		
+		Attribute questionAttribute = new Attribute("type", this.typeQ);
+		question.setAttribute(questionAttribute);
 	}
 	
 	public void addContents(Element parent){
@@ -31,7 +32,7 @@ public class MultiChoice extends Question{
 	}
 	
 	public static void main(String[] args) {
-		MultiChoice tfQ = new MultiChoice("Q 1", "C vrai?", "multxdfg", true, false, "ABC");
+		MultiChoice tfQ = new MultiChoice("Q 1", "C vrai?", true, false, "ABC");
 		//Element quiz = new Element("quiz");
 		//org.jdom.Document doc = new Document(quiz);
 		

@@ -4,7 +4,11 @@ import org.jdom.*;
 
 public class ShortAnswer extends Question{
 	
-	public ShortAnswer(String nom, String texte, String type) {
-		super(nom, texte, type);
+	public ShortAnswer(String nom, String texte) {
+		super(nom, texte);
+		this.typeQ = "shortanswer";
+		
+		Attribute questionAttribute = new Attribute("type", this.typeQ);
+		question.setAttribute(questionAttribute);
 	}
 }

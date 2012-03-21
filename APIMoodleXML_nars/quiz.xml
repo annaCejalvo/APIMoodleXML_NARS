@@ -34,7 +34,7 @@
       </feedback>
     </reponse>
   </question>
-  <question type="Numerical">
+  <question type="numerical">
     <nom>
       <text>Q 3</text>
     </nom>
