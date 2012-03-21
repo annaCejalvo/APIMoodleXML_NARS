@@ -34,7 +34,6 @@ public class Question {
 		text.setText(textQ);
 		questiontext.addContent(text);
 		question.addContent(questiontext);
-		
 	}
 
 	public void addAnswer(Reponse e) {
