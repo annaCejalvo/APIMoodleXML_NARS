@@ -11,5 +11,9 @@ public class TrueFalseQuestion extends Question {
 		
 		Attribute questionAttribute = new Attribute("type", this.typeQ);
 		question.setAttribute(questionAttribute);
+	}
+
+	public TrueFalseQuestion(Element elem) {
+		super(elem);
 	}	
 }

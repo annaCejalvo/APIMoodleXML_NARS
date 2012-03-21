@@ -1,6 +1,7 @@
 package dcll.nars.apimoodlexml_nars.write_questions;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.jdom.Element;
@@ -13,7 +14,26 @@ public class Quiz {
 		questions = new ArrayList<Question>();
 	}
 	public Quiz(Element elem) {
-		// TODO Auto-generated constructor stub
+		questions = new ArrayList<Question>();
+		List<Element> tmpLst = elem.getChildren("question");
+		Iterator i = tmpLst.iterator();
+		while(i.hasNext())
+		{
+			Element current = (Element)i.next();
+			String type = current.getAttributeValue("type");
+			Question q = null;
+			if(type.equals("multichoice")){
+				q = new MultiChoice(current);
+			}else if(type.equals("truefalse")){
+				q = new TrueFalseQuestion(current);
+			}else if(type.equals("numerical")){
+				q = new Numerical(current);
+			}else if(type.equals("shortanswer")){
+				q = new Numerical(current);
+			}
+			if(q != null)
+				questions.add(q);
+		}
 	}
 	
 	public void setQuestions(List<Question> questions) {

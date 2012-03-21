@@ -22,6 +22,10 @@ public class MultiChoice extends Question{
 		question.setAttribute(questionAttribute);
 	}
 	
+	public MultiChoice(Element elem) {
+		super(elem);
+	}
+
 	public void addContents(Element parent){
 //		Element singleElement = new Element("single", new Boolean(single).toString());
 //		super.getQuestionElement().addContent(singleElement);

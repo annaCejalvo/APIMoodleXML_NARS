@@ -36,6 +36,10 @@ public class Question {
 		question.addContent(questiontext);
 	}
 
+	public Question(Element elem) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void addAnswer(Reponse e) {
 		answers.add(e);
 		question.addContent(e.getReponseElement());
