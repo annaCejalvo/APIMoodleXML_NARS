@@ -1,4 +1,4 @@
-package dcll.nars.apimoodlexml_nars;
+package dcll.nars.apimoodlexml_nars.write_questions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class Question {
 	public String typeQ;
 	// Nous allons commencer notre arborescence en cr�ant la racine XML
 	// qui sera ici "question"
-	public static Element question;
+	public Element question;
 
 	public Question(String nomQ, String textQ, String type) {
 		question = new Element("question");	
@@ -44,10 +44,11 @@ public class Question {
 		
 	}
 
-	public void addAnwser(Reponse e) {
+	public void addAnswer(Reponse e) {
 		answers.add(e);
+		question.addContent(e.getReponseElement());
 	}
-	
+
 	public void modifyAnwser(Reponse ancienne, Reponse nouvelle) {
 		int index = answers.indexOf(ancienne);
 		answers.remove(index);
@@ -58,7 +59,7 @@ public class Question {
 		answers.remove(e);
 	}
 	
-	public static Element getQuestionElement() {
+	public Element getQuestionElement() {
 		return question;
 	}
 
