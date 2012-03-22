@@ -25,7 +25,7 @@ public class ReadXMLQuiz {
 			//On crée un nouveau document JDOM avec en argument le fichier XML
 			//Le parsing est terminé ;)
 			System.out.println(fileIn);
-			URI uri = new URI(fileIn);
+			//URI uri = new URI(fileIn);
 			doc = sxb.build(new File(fileIn));
 		}
 		catch(Exception e){
@@ -75,7 +75,9 @@ public class ReadXMLQuiz {
 		
 		if(q!=null){
 			Write w = new Write();
-			Document doc = new Document(q.getQuizElement());
+			Document doc = new Document();
+			System.out.println(q.getQuizElement().getChildren().toString());
+			doc.setRootElement(q.getQuizElement());
 			w.affiche(doc);
 			w.enregistre(doc, "Testxdfgf");
 		}

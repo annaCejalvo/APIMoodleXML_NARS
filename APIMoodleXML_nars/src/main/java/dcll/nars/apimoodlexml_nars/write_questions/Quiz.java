@@ -39,7 +39,7 @@ public class Quiz {
 				q = new ShortAnswer(current);
 			}
 			if(q != null)
-				questions.add(q);
+				addQuestion(q);
 		}
 	}
 	
