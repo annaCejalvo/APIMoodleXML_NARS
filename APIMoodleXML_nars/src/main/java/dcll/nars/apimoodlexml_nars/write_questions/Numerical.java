@@ -14,8 +14,7 @@ public class Numerical extends Question  {
 			question.setAttribute(questionAttribute);
 		}
 
-	public Numerical(Element elem) {
-		super(elem);
+	public Numerical(Element current) {
+		super(current);
 	}
-
 }

@@ -1,19 +1,20 @@
 package dcll.nars.apimoodlexml_nars.write_questions;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.jdom.Attribute;
 import org.jdom.Element;
 
 public class Question {
 	
-	public List<Reponse> answers;
-	public String nomQ;
-	public String textQ;
-	public String typeQ;
+	private List<Reponse> answers;
+	private String nomQ;
+	private String textQ;
+	protected String typeQ;
 	// Nous allons commencer notre arborescence en cr�ant la racine XML
 	// qui sera ici "question"
-	public Element question;
+	protected Element question;
 
 	public Question(String nomQ, String textQ) {
 		question = new Element("question");	
@@ -37,7 +38,22 @@ public class Question {
 	}
 
 	public Question(Element elem) {
-		// TODO Auto-generated constructor stub
+		this(elem.getChild("name").getChildText("text"), 
+				elem.getChild("questiontext").getChildText("text"));
+		List<Element> tmpLst = elem.getChildren("answer");
+		
+		Iterator i = tmpLst.iterator();
+		int z=0;
+		while(i.hasNext())
+		{
+			System.out.println("R"+z);
+			z++;
+			
+			Element current = (Element)i.next();
+			Reponse rep = new Reponse(current);
+			answers.add(rep);
+		}
+		
 	}
 
 	public void addAnswer(Reponse e) {

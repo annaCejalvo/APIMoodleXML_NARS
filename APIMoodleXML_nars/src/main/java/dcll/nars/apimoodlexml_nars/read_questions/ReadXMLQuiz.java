@@ -1,20 +1,23 @@
 package dcll.nars.apimoodlexml_nars.read_questions;
 
 import java.io.*;
+import java.net.URI;
+
 import org.jdom.*;
 import org.jdom.input.*;
 
 import dcll.nars.apimoodlexml_nars.write_questions.Quiz;
+import dcll.nars.apimoodlexml_nars.write_questions.Write;
 
-import java.util.List;
-import java.util.Iterator;
 
 public class ReadXMLQuiz {
 	private Document doc;
 	private Element racine;
 
-	public void parser(String fileIn){
+	public Quiz parser(String fileIn){
 
+		Quiz quiz = null;
+		
 		//On crée une instance de SAXBuilder
 		SAXBuilder sxb = new SAXBuilder();
 		try
@@ -22,22 +25,26 @@ public class ReadXMLQuiz {
 			//On crée un nouveau document JDOM avec en argument le fichier XML
 			//Le parsing est terminé ;)
 			System.out.println(fileIn);
+			URI uri = new URI(fileIn);
 			doc = sxb.build(new File(fileIn));
 		}
-		catch(Exception e){}
+		catch(Exception e){
+			System.out.println("Impossible de trouver le fichier");
+		}
 
 		//On initialise un nouvel élément racine avec l'élément racine du document.
 		racine = doc.getRootElement();
 		
-		if(doc.getRootElement().getName().equals(Quiz.getQuiz().getName()))
-			createQuiz(doc.getRootElement());
-		else
+		if(doc.getRootElement().getName().equals(Quiz.getBalisequiz())){
+			quiz = new Quiz(doc.getRootElement());
+			//createQuiz(doc.getRootElement());
+		}else{
 			System.out.println("Ce fichier n'est pas un quizz XML : impossible de le convertir en Objets Java");		
+		}
+		
+		return quiz;
 	}
 
-	private void createQuiz(Element elem) {
-		Quiz quiz = new Quiz(elem);
-	}
 
 	//Ajouter cette méthodes à la classe JDOM2
 //	void afficheALL()
@@ -64,6 +71,13 @@ public class ReadXMLQuiz {
 		
 		String adrs = "exemple.xml";
 		
-		cxtj.parser(adrs);
+		Quiz q = cxtj.parser(adrs);
+		
+		if(q!=null){
+			Write w = new Write();
+			Document doc = new Document(q.getQuizElement());
+			w.affiche(doc);
+			w.enregistre(doc, "Testxdfgf");
+		}
 	}
 }

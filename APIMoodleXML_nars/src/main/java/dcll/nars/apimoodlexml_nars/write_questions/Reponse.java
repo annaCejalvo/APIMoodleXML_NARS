@@ -7,27 +7,52 @@ public class Reponse {
 	//private Question question; 
 	private String textR;
 	private String feedBackR;
-	private int fractionR;
+	private float fractionR;
 	
-	Element reponse = new Element("reponse");
+	private Element reponse = new Element("reponse");
 
-	public Reponse(String txtReponse, String feedB, int frac) {
+	public Reponse(String txtReponse, String feedB, float i) {
 
 		this.textR = txtReponse;
 		this.feedBackR = feedB;
-		this.fractionR = frac;	
+		this.fractionR = i;	
 		
+		initResponse();
+
+	}
+
+	public Reponse(Element elem) {
+		
+		textR = elem.getChildText("text");
+		feedBackR = elem.getChild("feedback").getChildText("text");
+		
+		try{
+			fractionR = Integer.parseInt(elem.getAttributeValue("fraction"));
+		}catch (Exception e) {
+			fractionR = Float.parseFloat(elem.getAttributeValue("fraction"));
+		}
+		
+		
+		System.out.println(textR +"/"+feedBackR+"/"+fractionR);
+		
+		initResponse();
+		
+	}
+	
+	private void initResponse() {
 		Attribute fraction = new Attribute("fraction", ""+fractionR);
 		reponse.setAttribute(fraction);
-		Element text = new Element("text");
-		text.setText(textR);
-		reponse.addContent(text);
+		if(textR.equals("")){
+			Element text = new Element("text");
+			text.setText(textR);
+			reponse.addContent(text);
+		}
+		
 		Element feedback = new Element("feedback");
 		Element textFeedback = new Element("text");
 		textFeedback.setText(feedBackR);
 		feedback.addContent(textFeedback);
 		reponse.addContent(feedback);
-
 	}
 
 	public Element getReponseElement() {

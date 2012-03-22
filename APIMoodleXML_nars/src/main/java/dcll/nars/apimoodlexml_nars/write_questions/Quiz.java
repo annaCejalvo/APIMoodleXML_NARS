@@ -7,8 +7,10 @@ import java.util.List;
 import org.jdom.Element;
 
 public class Quiz {
-	private static Element quiz = new Element("quiz");
+	private Element quiz = new Element("quiz");
 	private List<Question> questions;
+	
+	private static final String baliseQuiz = "quiz";
 	
 	public Quiz(){
 		questions = new ArrayList<Question>();
@@ -17,9 +19,14 @@ public class Quiz {
 		questions = new ArrayList<Question>();
 		List<Element> tmpLst = elem.getChildren("question");
 		Iterator i = tmpLst.iterator();
+		int z = 0;
 		while(i.hasNext())
 		{
+			
+			System.out.println("Q"+z);
+			z++;
 			Element current = (Element)i.next();
+			//System.out.println(current.getChildren().toString());
 			String type = current.getAttributeValue("type");
 			Question q = null;
 			if(type.equals("multichoice")){
@@ -29,7 +36,7 @@ public class Quiz {
 			}else if(type.equals("numerical")){
 				q = new Numerical(current);
 			}else if(type.equals("shortanswer")){
-				q = new Numerical(current);
+				q = new ShortAnswer(current);
 			}
 			if(q != null)
 				questions.add(q);
@@ -52,7 +59,8 @@ public class Quiz {
 	public Element getQuizElement() {
 		return quiz;
 	}
-	public static Element getQuiz() {
-		return quiz;
+
+	public static String getBalisequiz() {
+		return baliseQuiz;
 	}
 }

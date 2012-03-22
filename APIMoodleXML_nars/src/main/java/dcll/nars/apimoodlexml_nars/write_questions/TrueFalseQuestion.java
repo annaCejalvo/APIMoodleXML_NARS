@@ -13,7 +13,7 @@ public class TrueFalseQuestion extends Question {
 		question.setAttribute(questionAttribute);
 	}
 
-	public TrueFalseQuestion(Element elem) {
-		super(elem);
-	}	
+	public TrueFalseQuestion(Element current) {
+		super(current);
+	}
 }

@@ -11,4 +11,8 @@ public class ShortAnswer extends Question{
 		Attribute questionAttribute = new Attribute("type", this.typeQ);
 		question.setAttribute(questionAttribute);
 	}
+
+	public ShortAnswer(Element current) {
+		super(current);
+	}
 }

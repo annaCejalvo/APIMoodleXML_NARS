@@ -28,12 +28,14 @@ public class Write {
 		quiz.addQuestion(question2);
 		quiz.addQuestion(question3);
 		
-		affiche(document);
-		enregistre(document, "quiz.xml");
+		Write f = new Write();
+		
+		f.affiche(document);
+		f.enregistre(document, "quiz.xml");
 	}
 	
 	/* Ces deux methodes servent a ecrire le quiz.xml */
-	static void affiche(org.jdom.Document document) {
+	public void affiche(org.jdom.Document document) {
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()
 			XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
@@ -43,7 +45,7 @@ public class Write {
 		}
 	}
 
-	static void enregistre(org.jdom.Document document, String fichier) {
+	public void enregistre(org.jdom.Document document, String fichier) {
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()
 			XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());

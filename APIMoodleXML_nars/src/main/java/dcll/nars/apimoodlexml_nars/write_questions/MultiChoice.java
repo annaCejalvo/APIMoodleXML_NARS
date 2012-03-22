@@ -24,6 +24,21 @@ public class MultiChoice extends Question{
 	
 	public MultiChoice(Element elem) {
 		super(elem);
+		
+		single = Boolean.parseBoolean(elem.getChildText("single"));
+		shuffleanswers = Boolean.parseBoolean(elem.getChildText("shuffleanswers"));
+		answernumbering = elem.getChildText("answernumbering");
+		
+		Element single = new Element("single");
+		single.setText(elem.getChildText("single"));
+		Element shuffleanswers = new Element("shuffleanswers");
+		shuffleanswers.setText(elem.getChildText("shuffleanswers"));
+		Element answernumbering = new Element("answernumbering");
+		answernumbering.setText(elem.getChildText("answernumbering"));
+		
+		question.addContent(single);
+		question.addContent(shuffleanswers);
+		question.addContent(answernumbering);
 	}
 
 	public void addContents(Element parent){
@@ -35,8 +50,8 @@ public class MultiChoice extends Question{
 //		super.getQuestionElement().addContent(numberingElement);
 	}
 	
-	public static void main(String[] args) {
-		MultiChoice tfQ = new MultiChoice("Q 1", "C vrai?", true, false, "ABC");
+//	public static void main(String[] args) {
+//		MultiChoice tfQ = new MultiChoice("Q 1", "C vrai?", true, false, "ABC");
 		//Element quiz = new Element("quiz");
 		//org.jdom.Document doc = new Document(quiz);
 		
@@ -45,6 +60,6 @@ public class MultiChoice extends Question{
 		//Quiz.quiz.addContent(tfQ.getQuestionElement());
 		//quiz.addContent(tfQ.getQuestionElement());
 		//Quiz.affiche(Quiz.document);
-	}
+	//}
 
 }
