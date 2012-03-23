@@ -8,13 +8,11 @@ public class Numerical extends Question  {
 	
 	 public Numerical(String nomQ, String textQ) {
 			super(nomQ, textQ);
-			this.typeQ = "numerical";
-			
-			Attribute questionAttribute = new Attribute("type", this.typeQ);
-			question.setAttribute(questionAttribute);
+			addAttributeType("numerical");
 		}
 
-	public Numerical(Element current) {
-		super(current);
+	public Numerical(Element elem) {
+		super(elem);
+		addAttributeType(elem.getAttributeValue("type"));
 	}
 }

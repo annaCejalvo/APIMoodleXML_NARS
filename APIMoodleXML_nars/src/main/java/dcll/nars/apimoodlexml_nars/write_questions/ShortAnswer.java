@@ -6,13 +6,12 @@ public class ShortAnswer extends Question{
 	
 	public ShortAnswer(String nom, String texte) {
 		super(nom, texte);
-		this.typeQ = "shortanswer";
 		
-		Attribute questionAttribute = new Attribute("type", this.typeQ);
-		question.setAttribute(questionAttribute);
+		addAttributeType("shortanswer");
 	}
 
-	public ShortAnswer(Element current) {
-		super(current);
+	public ShortAnswer(Element elem) {
+		super(elem);
+		addAttributeType(elem.getAttributeValue("type"));
 	}
 }

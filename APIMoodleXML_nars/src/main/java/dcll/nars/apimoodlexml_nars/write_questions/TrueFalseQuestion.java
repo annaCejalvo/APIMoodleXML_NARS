@@ -9,11 +9,11 @@ public class TrueFalseQuestion extends Question {
 		super(nomQ, textQ);
 		this.typeQ = "truefalse";
 		
-		Attribute questionAttribute = new Attribute("type", this.typeQ);
-		question.setAttribute(questionAttribute);
+		addAttributeType("truefalse");
 	}
 
-	public TrueFalseQuestion(Element current) {
-		super(current);
+	public TrueFalseQuestion(Element elem) {
+		super(elem);
+		addAttributeType(elem.getAttributeValue("type"));
 	}
 }

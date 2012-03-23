@@ -1,7 +1,6 @@
 package dcll.nars.apimoodlexml_nars.read_questions;
 
 import java.io.*;
-import java.net.URI;
 
 import org.jdom.*;
 import org.jdom.input.*;
@@ -35,8 +34,8 @@ public class ReadXMLQuiz {
 		//On initialise un nouvel élément racine avec l'élément racine du document.
 		racine = doc.getRootElement();
 		
-		if(doc.getRootElement().getName().equals(Quiz.getBalisequiz())){
-			quiz = new Quiz(doc.getRootElement());
+		if(racine.getName().equals(Quiz.getBalisequiz())){
+			quiz = new Quiz(racine);
 			//createQuiz(doc.getRootElement());
 		}else{
 			System.out.println("Ce fichier n'est pas un quizz XML : impossible de le convertir en Objets Java");		
@@ -73,7 +72,7 @@ public class ReadXMLQuiz {
 		
 		Quiz q = cxtj.parser(adrs);
 		
-		if(q!=null){
+		if (q != null) {
 			Write w = new Write();
 			Document doc = new Document();
 			System.out.println(q.getQuizElement().getChildren().toString());

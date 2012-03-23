@@ -37,6 +37,12 @@ public class Question {
 		question.addContent(questiontext);
 	}
 
+	protected void addAttributeType(String typeQ){
+		this.typeQ = typeQ;
+		Attribute questionAttribute = new Attribute("type", this.typeQ);
+		question.setAttribute(questionAttribute);
+	}
+	
 	public Question(Element elem) {
 		this(elem.getChild("name").getChildText("text"), 
 				elem.getChild("questiontext").getChildText("text"));
@@ -48,10 +54,10 @@ public class Question {
 		{
 			System.out.println("R"+z);
 			z++;
-			
+			System.out.println("REP");
 			Element current = (Element)i.next();
 			Reponse rep = new Reponse(current);
-			answers.add(rep);
+			addAnswer(rep);
 		}
 		
 	}

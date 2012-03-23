@@ -11,15 +11,13 @@ public class MultiChoice extends Question{
 	
 	public MultiChoice(String nomQ, String textQ, boolean single, boolean shuffleanswers, String answernumbering) {
 		super(nomQ, textQ);
-		this.typeQ = "multichoice";
 		this.single = single;
 		this.shuffleanswers = shuffleanswers;
 		
 		//checked the form of String
 		this.answernumbering = answernumbering;
 		
-		Attribute questionAttribute = new Attribute("type", this.typeQ);
-		question.setAttribute(questionAttribute);
+		addAttributeType("multichoice");
 	}
 	
 	public MultiChoice(Element elem) {
@@ -39,6 +37,8 @@ public class MultiChoice extends Question{
 		question.addContent(single);
 		question.addContent(shuffleanswers);
 		question.addContent(answernumbering);
+		
+		addAttributeType(elem.getAttributeValue("type"));
 	}
 
 	public void addContents(Element parent){

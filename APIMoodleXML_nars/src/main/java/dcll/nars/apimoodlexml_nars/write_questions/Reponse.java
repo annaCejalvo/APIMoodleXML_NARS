@@ -9,7 +9,7 @@ public class Reponse {
 	private String feedBackR;
 	private float fractionR;
 	
-	private Element reponse = new Element("reponse");
+	private Element reponse = new Element("answer");
 
 	public Reponse(String txtReponse, String feedB, float i) {
 
@@ -22,8 +22,9 @@ public class Reponse {
 	}
 
 	public Reponse(Element elem) {
-		
+		System.out.println("REP-cons");
 		textR = elem.getChildText("text");
+		System.out.println("REP-sdfgg");
 		feedBackR = elem.getChild("feedback").getChildText("text");
 		
 		try{
@@ -33,7 +34,7 @@ public class Reponse {
 		}
 		
 		
-		System.out.println(textR +"/"+feedBackR+"/"+fractionR);
+		System.out.println("3333333333"+textR +"/"+feedBackR+"/"+fractionR);
 		
 		initResponse();
 		
@@ -42,17 +43,20 @@ public class Reponse {
 	private void initResponse() {
 		Attribute fraction = new Attribute("fraction", ""+fractionR);
 		reponse.setAttribute(fraction);
-		if(textR.equals("")){
-			Element text = new Element("text");
-			text.setText(textR);
-			reponse.addContent(text);
-		}
+		
+		Element text = new Element("text");
+		text.setText(textR);
+		reponse.addContent(text);
 		
 		Element feedback = new Element("feedback");
 		Element textFeedback = new Element("text");
 		textFeedback.setText(feedBackR);
+		
 		feedback.addContent(textFeedback);
+		
 		reponse.addContent(feedback);
+		
+		System.out.println(reponse.getChildren().toString());
 	}
 
 	public Element getReponseElement() {
