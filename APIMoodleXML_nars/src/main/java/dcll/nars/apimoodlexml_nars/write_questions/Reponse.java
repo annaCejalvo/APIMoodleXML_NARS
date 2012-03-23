@@ -4,61 +4,65 @@ import org.jdom.Attribute;
 import org.jdom.Element;
 
 public class Reponse {
-	//private Question question; 
+	// private Question question;
 	private String textR;
 	private String feedBackR;
 	private float fractionR;
-	
-	private Element reponse = new Element("reponse");
+
+	private Element reponse = new Element("answer");
+
 	/**
 	 * constructeur d'une reponse
-	 * @param txtReponse : intitule de question
-	 * @param  feedB : feed back sur la reponse
-	 * @param i : fraction de la reponse
+	 * 
+	 * @param txtReponse
+	 *            : intitule de question
+	 * @param feedB
+	 *            : feed back sur la reponse
+	 * @param i
+	 *            : fraction de la reponse
 	 */
-	
 	public Reponse(String txtReponse, String feedB, float i) {
 
 		this.textR = txtReponse;
 		this.feedBackR = feedB;
-		this.fractionR = i;	
-		
+		this.fractionR = i;
+
 		initResponse();
 
 	}
 
 	public Reponse(Element elem) {
-		
+		System.out.println("REP-cons");
 		textR = elem.getChildText("text");
+		System.out.println("REP-sdfgg");
 		feedBackR = elem.getChild("feedback").getChildText("text");
-		
-		try{
+		try {
 			fractionR = Integer.parseInt(elem.getAttributeValue("fraction"));
-		}catch (Exception e) {
+		} catch (Exception e) {
 			fractionR = Float.parseFloat(elem.getAttributeValue("fraction"));
 		}
-		
-		
-		System.out.println(textR +"/"+feedBackR+"/"+fractionR);
-		
+		System.out.println("3333333333" + textR + "/" + feedBackR + "/"
+				+ fractionR);
 		initResponse();
-		
 	}
-	
+
 	private void initResponse() {
-		Attribute fraction = new Attribute("fraction", ""+fractionR);
+		Attribute fraction = new Attribute("fraction", "" + fractionR);
 		reponse.setAttribute(fraction);
-		if(textR.equals("")){
-			Element text = new Element("text");
-			text.setText(textR);
-			reponse.addContent(text);
-		}
-		
+
+		Element text = new Element("text");
+		text.setText(textR);
+		reponse.addContent(text);
+
 		Element feedback = new Element("feedback");
 		Element textFeedback = new Element("text");
 		textFeedback.setText(feedBackR);
+
 		feedback.addContent(textFeedback);
+
 		reponse.addContent(feedback);
+
+		System.out.println(reponse.getChildren().toString());
 	}
 
 	public Element getReponseElement() {

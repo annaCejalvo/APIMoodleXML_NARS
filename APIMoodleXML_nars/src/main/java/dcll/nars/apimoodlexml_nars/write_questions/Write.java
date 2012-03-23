@@ -6,24 +6,25 @@ import org.jdom.Document;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
-<<<<<<< HEAD
 public class Write {
-=======
-public class Write {
->>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
-	
+
 	/**
-	 * Nous allons commencer notre arborescence en créant la racine XML qui sera ici "quiz"
+	 * Nous allons commencer notre arborescence en créant la racine XML qui sera
+	 * ici "quiz"
+	 * 
 	 * @attribute quiz : creation d'un quiz
-	 * @attribute document : creation d'un document JDOM basé sur la racine que l'on vient de créer
+	 * @attribute document : creation d'un document JDOM basé sur la racine que
+	 *            l'on vient de créer
 	 */
 	static Quiz quiz = new Quiz();
 
 	static org.jdom.Document document = new Document(quiz.getQuizElement());
-	
+
 	/**
 	 * methode principale qui enregistre un quiz sous format xml
-	 * @param args : arguments de l'application
+	 * 
+	 * @param args
+	 *            : arguments de l'application
 	 * 
 	 */
 
@@ -34,44 +35,35 @@ public class Write {
 
 		ShortAnswer question2 = new ShortAnswer("Q 2", "question short");
 		question2.addAnswer(new Reponse("The correct answer", "correct!", 100));
-		
+
 		Numerical question3 = new Numerical("Q 3", "question numerical");
 		question3.addAnswer(new Reponse("23", "Feedback", 100));
-				
+
 		quiz.addQuestion(question1);
 		quiz.addQuestion(question2);
 		quiz.addQuestion(question3);
-		
+
 		Write f = new Write();
-		
+
 		f.affiche(document);
 		f.enregistre(document, "quiz.xml");
 	}
-	
-	/**
-	 * Cette methode renregiqtre le quiz.xml dans la racine du projet
-	 */
-<<<<<<< HEAD
 
-=======
->>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
+	/**
+	 * Cette methode affiche le quiz.xml dans la console
+	 */
 	public void affiche(org.jdom.Document document) {
 
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()
 			XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
 			sortie.output(document, System.out);
-		} 
-		catch (java.io.IOException e) {
+		} catch (java.io.IOException e) {
 		}
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
 	/**
-	 * Cette methode affiche le quiz.xml dans la console
+	 * Cette methode renregiqtre le quiz.xml dans la racine du projet
 	 */
 	public void enregistre(org.jdom.Document document, String fichier) {
 
@@ -83,12 +75,8 @@ public class Write {
 			// avec en argument le nom du fichier pour effectuer la
 			// sérialisation.
 			sortie.output(document, new FileOutputStream(fichier));
-		} 
-		catch (java.io.IOException e) {
+		} catch (java.io.IOException e) {
 		}
 	}
 
-	
-
-	}
-
+}

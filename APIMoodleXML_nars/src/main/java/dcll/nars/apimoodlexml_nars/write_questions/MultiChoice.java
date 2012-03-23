@@ -1,18 +1,12 @@
 package dcll.nars.apimoodlexml_nars.write_questions;
 
-import org.jdom.Attribute;
-import org.jdom.Document;
 import org.jdom.Element;
 
 public class MultiChoice extends Question{
 	private boolean single;
 	private boolean shuffleanswers;
 	private String answernumbering;
-<<<<<<< HEAD
-	
-=======
-	
->>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
+
 	/**
 	 * constructeur d'un multichoice question
 	 * @param nomQ : intitule de question
@@ -22,34 +16,18 @@ public class MultiChoice extends Question{
 	 * @param answernumbering
 	 * 
 	 */
-<<<<<<< HEAD
 
-=======
->>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
 	public MultiChoice(String nomQ, String textQ, boolean single, boolean shuffleanswers, String answernumbering) {
 		super(nomQ, textQ);
-		this.typeQ = "multichoice";
 		this.single = single;
 		this.shuffleanswers = shuffleanswers;
 		
 		//checked the form of String
 		this.answernumbering = answernumbering;
 		
-		Attribute questionAttribute = new Attribute("type", this.typeQ);
-		question.setAttribute(questionAttribute);
+		addAttributeType("multichoice");
 	}
-<<<<<<< HEAD
-
-	/**
-	 * constructeur d'un multichoice question
-	 * @param elem : element du question
-=======
-	/**
-	 * constructeur d'un multichoice question
-	 * @param elem : element du question
 	
->>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
-	 */
 	public MultiChoice(Element elem) {
 		super(elem);
 		
@@ -67,6 +45,8 @@ public class MultiChoice extends Question{
 		question.addContent(single);
 		question.addContent(shuffleanswers);
 		question.addContent(answernumbering);
+		
+		addAttributeType(elem.getAttributeValue("type"));
 	}
 
 	public void addContents(Element parent){

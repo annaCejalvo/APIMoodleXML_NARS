@@ -42,6 +42,8 @@ public class Quiz {
 				q = new Numerical(current);
 			}else if(type.equals("shortanswer")){
 				q = new ShortAnswer(current);
+			}else if(type.equals("essay")){
+				q = new Essay(current);
 			}
 			if(q != null)
 				addQuestion(q);
