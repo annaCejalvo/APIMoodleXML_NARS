@@ -12,10 +12,18 @@ public class Question {
 	private String nomQ;
 	private String textQ;
 	protected String typeQ;
-	// Nous allons commencer notre arborescence en cr�ant la racine XML
-	// qui sera ici "question"
-	protected Element question;
+	/**
+	 * Nous allons commencer notre arborescence en cr�ant la racine XML
+	 * qui sera ici "question"
+	 */
 
+	protected Element question;
+	/**
+	 * constructeur d'une question	
+	 * @param nomQ : intitule de question
+	 * @param  textQ : text de question
+	 */
+	
 	public Question(String nomQ, String textQ) {
 		question = new Element("question");	
 		answers = new ArrayList<Reponse>();

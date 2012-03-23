@@ -11,9 +11,16 @@ import dcll.nars.apimoodlexml_nars.write_questions.Write;
 
 
 public class ReadXMLQuiz {
+	/**
+	 * Nous allons commencer notre par creer
+	 * @attribute doc : document xml
+	 * @attribute racine : element racine du xml
+	 */
 	private Document doc;
 	private Element racine;
-
+	/**
+	 * methode parseur xml java
+	 */
 	public Quiz parser(String fileIn){
 
 		Quiz quiz = null;
@@ -65,7 +72,10 @@ public class ReadXMLQuiz {
 //		}
 //	}
 
-
+	/**
+	 * methode principale qui fait generer des objets java a partir
+	 * d'un fichier xml
+	 */
 	public static void main(String[] args) {
 		ReadXMLQuiz cxtj = new ReadXMLQuiz();
 		

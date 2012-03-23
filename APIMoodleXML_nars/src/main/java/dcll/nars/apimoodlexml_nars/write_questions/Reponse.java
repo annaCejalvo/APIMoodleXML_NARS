@@ -10,7 +10,13 @@ public class Reponse {
 	private float fractionR;
 	
 	private Element reponse = new Element("reponse");
-
+	/**
+	 * constructeur d'une reponse
+	 * @param txtReponse : intitule de question
+	 * @param  feedB : feed back sur la reponse
+	 * @param i : fraction de la reponse
+	 */
+	
 	public Reponse(String txtReponse, String feedB, float i) {
 
 		this.textR = txtReponse;
