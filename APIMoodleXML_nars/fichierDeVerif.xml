@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+ <question type="numerical">
+    <nom>
+      <text>Q 3</text>
+    </nom>
+    <questiontext format="html">
+      <text>question numerical</text>
+    </questiontext>
+    <reponse fraction="100.0">
+      <feedback>
+        <text>Feedback</text>
+      </feedback>
+    </reponse>
+  </question>
+</quiz>
+

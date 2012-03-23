@@ -74,4 +74,26 @@ public class Question {
 	public Element getQuestionElement() {
 		return question;
 	}
+
+	public List<Reponse> getAnswers() {
+		return answers;
+	}
+
+	public String getNomQ() {
+		return nomQ;
+	}
+
+	public String getTextQ() {
+		return textQ;
+	}
+
+	public String getTypeQ() {
+		return typeQ;
+	}
+
+	public Element getQuestion() {
+		return question;
+	}
+	
+	
 }
