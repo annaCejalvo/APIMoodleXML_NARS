@@ -6,7 +6,11 @@ import org.jdom.Document;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
+<<<<<<< HEAD
 public class Write {
+=======
+public class Write {
+>>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
 	
 	/**
 	 * Nous allons commencer notre arborescence en créant la racine XML qui sera ici "quiz"
@@ -47,7 +51,10 @@ public class Write {
 	/**
 	 * Cette methode renregiqtre le quiz.xml dans la racine du projet
 	 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
 	public void affiche(org.jdom.Document document) {
 
 		try {
@@ -59,7 +66,10 @@ public class Write {
 		}
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37817f25978170f9038ffc005080f2dbd8ebd547
 	/**
 	 * Cette methode affiche le quiz.xml dans la console
 	 */
