@@ -13,6 +13,11 @@ public class Write {
 	//On crée un nouveau Document JDOM basé sur la racine que l'on vient de créer
 	static org.jdom.Document document = new Document(quiz.getQuizElement());
 	
+	/**
+	 * sdfsdkflhksdf
+	 * @param args dklfjdflg
+	 * 
+	 */
 	public static void main(String[] args) {
 		TrueFalseQuestion question1 = new TrueFalseQuestion("Q 1", "C vrai?");
 		question1.addAnswer(new Reponse("true", "correct!", 100));
