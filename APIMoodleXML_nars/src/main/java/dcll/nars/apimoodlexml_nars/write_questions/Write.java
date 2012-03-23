@@ -7,15 +7,19 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
 public class Write {
-	//Nous allons commencer notre arborescence en créant la racine XML qui sera ici "quiz".
+	
+	/**
+	 * Nous allons commencer notre arborescence en créant la racine XML qui sera ici "quiz"
+	 * @attribute quiz : creation d'un quiz
+	 * @attribute document : creation d'un document JDOM basé sur la racine que l'on vient de créer
+	 */
 	static Quiz quiz = new Quiz();
 
-	//On crée un nouveau Document JDOM basé sur la racine que l'on vient de créer
 	static org.jdom.Document document = new Document(quiz.getQuizElement());
 	
 	/**
-	 * sdfsdkflhksdf
-	 * @param args dklfjdflg
+	 * methode principale qui enregistre un quiz sous format xml
+	 * @param args : arguments de l'application
 	 * 
 	 */
 	public static void main(String[] args) {
@@ -39,7 +43,9 @@ public class Write {
 		f.enregistre(document, "quiz.xml");
 	}
 	
-	/* Ces deux methodes servent a ecrire le quiz.xml */
+	/**
+	 * Cette methode renregiqtre le quiz.xml dans la racine du projet
+	 */
 	public void affiche(org.jdom.Document document) {
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()
@@ -50,6 +56,9 @@ public class Write {
 		}
 	}
 
+	/**
+	 * Cette methode affiche le quiz.xml dans la console
+	 */
 	public void enregistre(org.jdom.Document document, String fichier) {
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()

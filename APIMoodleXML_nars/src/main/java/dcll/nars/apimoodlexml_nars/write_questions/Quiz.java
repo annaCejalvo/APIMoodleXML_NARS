@@ -15,6 +15,11 @@ public class Quiz {
 	public Quiz(){
 		questions = new ArrayList<Question>();
 	}
+	/**
+	 * constructeur d'un quiz 
+	 * @param elem : element racine qui rassemble tuos les questions
+	 */
+	
 	public Quiz(Element elem) {
 		questions = new ArrayList<Question>();
 		List<Element> tmpLst = elem.getChildren("question");

@@ -9,6 +9,15 @@ public class MultiChoice extends Question{
 	private boolean shuffleanswers;
 	private String answernumbering;
 	
+	/**
+	 * constructeur d'un multichoice question
+	 * @param nomQ : intitule de question
+	 * @param  textQ : text de question
+	 * @param single : boolean
+	 * @param shuffleanswers
+	 * @param answernumbering
+	 * 
+	 */
 	public MultiChoice(String nomQ, String textQ, boolean single, boolean shuffleanswers, String answernumbering) {
 		super(nomQ, textQ);
 		this.typeQ = "multichoice";
@@ -21,7 +30,11 @@ public class MultiChoice extends Question{
 		Attribute questionAttribute = new Attribute("type", this.typeQ);
 		question.setAttribute(questionAttribute);
 	}
+	/**
+	 * constructeur d'un multichoice question
+	 * @param elem : element du question
 	
+	 */
 	public MultiChoice(Element elem) {
 		super(elem);
 		
