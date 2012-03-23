@@ -18,6 +18,7 @@ public class MultiChoice extends Question{
 	 * @param answernumbering
 	 * 
 	 */
+
 	public MultiChoice(String nomQ, String textQ, boolean single, boolean shuffleanswers, String answernumbering) {
 		super(nomQ, textQ);
 		this.typeQ = "multichoice";
@@ -30,10 +31,10 @@ public class MultiChoice extends Question{
 		Attribute questionAttribute = new Attribute("type", this.typeQ);
 		question.setAttribute(questionAttribute);
 	}
+
 	/**
 	 * constructeur d'un multichoice question
 	 * @param elem : element du question
-	
 	 */
 	public MultiChoice(Element elem) {
 		super(elem);
@@ -63,16 +64,7 @@ public class MultiChoice extends Question{
 //		super.getQuestionElement().addContent(numberingElement);
 	}
 	
-//	public static void main(String[] args) {
-//		MultiChoice tfQ = new MultiChoice("Q 1", "C vrai?", true, false, "ABC");
-		//Element quiz = new Element("quiz");
-		//org.jdom.Document doc = new Document(quiz);
-		
-		//tfQ.addAnwser(new Reponse(tfQ, "false", "Ooops!", 0));
-		//doc.addContent(quiz);
-		//Quiz.quiz.addContent(tfQ.getQuestionElement());
-		//quiz.addContent(tfQ.getQuestionElement());
-		//Quiz.affiche(Quiz.document);
-	//}
 
 }
+
+

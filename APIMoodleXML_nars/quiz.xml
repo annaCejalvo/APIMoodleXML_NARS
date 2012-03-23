@@ -8,11 +8,13 @@
       <text>C vrai?</text>
     </questiontext>
     <reponse fraction="100.0">
+      <text>true</text>
       <feedback>
         <text>correct!</text>
       </feedback>
     </reponse>
     <reponse fraction="0.0">
+     <text>false</text>
       <feedback>
         <text>Ooops!</text>
       </feedback>

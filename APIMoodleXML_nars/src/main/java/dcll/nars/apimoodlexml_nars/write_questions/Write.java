@@ -22,6 +22,7 @@ public class Write {
 	 * @param args : arguments de l'application
 	 * 
 	 */
+
 	public static void main(String[] args) {
 		TrueFalseQuestion question1 = new TrueFalseQuestion("Q 1", "C vrai?");
 		question1.addAnswer(new Reponse("true", "correct!", 100));
@@ -46,7 +47,9 @@ public class Write {
 	/**
 	 * Cette methode renregiqtre le quiz.xml dans la racine du projet
 	 */
+
 	public void affiche(org.jdom.Document document) {
+
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()
 			XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
@@ -56,10 +59,12 @@ public class Write {
 		}
 	}
 
+
 	/**
 	 * Cette methode affiche le quiz.xml dans la console
 	 */
 	public void enregistre(org.jdom.Document document, String fichier) {
+
 		try {
 			// On utilise ici un affichage classique avec getPrettyFormat()
 			XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
@@ -71,9 +76,9 @@ public class Write {
 		} 
 		catch (java.io.IOException e) {
 		}
-	
 	}
+
 	
-	
-}
+
+	}
 

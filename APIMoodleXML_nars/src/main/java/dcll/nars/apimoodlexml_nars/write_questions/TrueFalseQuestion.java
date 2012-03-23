@@ -8,7 +8,6 @@ public class TrueFalseQuestion extends Question {
 	 * @param nomQ : intitule de truefalse question
 	 * @param  textQ : texte la question truefalse
 	 */
-	
 	public TrueFalseQuestion(String nomQ, String textQ) {
 		
 		super(nomQ, textQ);
@@ -21,4 +20,5 @@ public class TrueFalseQuestion extends Question {
 	public TrueFalseQuestion(Element current) {
 		super(current);
 	}
+
 }
